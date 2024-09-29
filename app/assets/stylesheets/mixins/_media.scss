@@ -1,0 +1,20 @@
+
+//这段代码是一个 SCSS（Sass）的代码片段。
+// 它定义了一个名为 media 的 mixin（混合器）。
+// Mixin 是一种在 CSS 中复用代码的机制，用于生成 CSS 规则。
+
+//这个 mixin 接受一个名为 $query 的参数。
+//在这个代码片段中，我们假设 $query 的可能取值为 tabletAndUp。
+//然后，它使用了条件语句 @if，判断传入的 $query 是否等于 tabletAndUp。
+// 如果等于，那么它会生成一个媒体查询规则，即 @media (min-width: 50rem)。
+//媒体查询规则表示在设备宽度大于或等于 50rem 时应用该规则。
+// 它使用了 Sass 的变量和插值语法，其中 50rem 是通过变量 min-width 的值来定义的。
+//在媒体查询规则中，@content 表示 mixin 调用点的内容将被插入到这个位置。
+//因此，如果我们使用 @include media(tabletAndUp) 调用这个 mixin，
+// 那么媒体查询规则将会生效，并插入使用该 mixin 时的内容。
+
+@mixin media($query) {
+  @if $query == tabletAndUp {
+    @media (min-width: 50rem) { @content; }
+  }
+}
